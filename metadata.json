@@ -1,0 +1,8 @@
+{
+  "name": "Coach Matboly",
+  "description": "Elite online \u0026 in-person fitness coaching, custom transformation plans, and subscription workout reels by Mohamed Ahmed with a full-featured admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "SiteConfig": {
+      "title": "Site Configuration",
+      "description": "Full dynamic configuration and content for Coach Matboly website",
+      "type": "object",
+      "properties": {
+        "hero": {
+          "type": "object",
+          "description": "Hero section content, headlines, background media and CTA"
+        },
+        "about": {
+          "type": "object",
+          "description": "About Coach Matboly section, bio, credentials, badges, stats"
+        },
+        "subscription": {
+          "type": "object",
+          "description": "Reels and video workouts section, videos, titles"
+        },
+        "plans": {
+          "type": "object",
+          "description": "Membership packages, durations, discounts, and pricing"
+        },
+        "paymentInfo": {
+          "type": "object",
+          "description": "Payment and transfer methods, bank details, InstaPay, Vodafone Cash, currency conversion"
+        },
+        "choices": {
+          "type": "object",
+          "description": "Healthier choices pillars and benefits"
+        },
+        "contact": {
+          "type": "object",
+          "description": "Contact info, social media links, and intake form settings"
+        },
+        "footer": {
+          "type": "object",
+          "description": "Footer links, copyright, and brand settings"
+        }
+      }
+    },
+    "CustomerRegistration": {
+      "title": "Customer Registration",
+      "description": "Registered customer leads and subscription intake",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique registration ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Customer full name"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Local phone number"
+        },
+        "countryName": {
+          "type": "string",
+          "description": "Selected country name"
+        },
+        "countryCode": {
+          "type": "string",
+          "description": "Country ISO code"
+        },
+        "countryDialCode": {
+          "type": "string",
+          "description": "Country dial code"
+        },
+        "fullInternationalPhone": {
+          "type": "string",
+          "description": "Full E.164 phone with dial code"
+        },
+        "selectedPlanId": {
+          "type": "string",
+          "description": "Selected plan identifier"
+        },
+        "selectedPlanName": {
+          "type": "string",
+          "description": "Plan title"
+        },
+        "selectedDurationMonths": {
+          "type": "number",
+          "description": "Commitment duration in months"
+        },
+        "calculatedPrice": {
+          "type": "number",
+          "description": "Final calculated price"
+        },
+        "currencySymbol": {
+          "type": "string",
+          "description": "Currency symbol"
+        },
+        "status": {
+          "type": "string",
+          "description": "Order processing status",
+          "enum": ["new", "confirmed", "active", "contacted", "completed", "cancelled"]
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp string"
+        },
+        "createdAtTimestamp": {
+          "type": "number",
+          "description": "Epoch millisecond timestamp"
+        }
+      },
+      "required": ["name", "fullInternationalPhone"]
+    }
+  },
+  "firestore": {
+    "/site_config/{configId}": {
+      "schema": "SiteConfig",
+      "description": "Global website configuration, content, media, prices, and settings"
+    },
+    "/customers/{customerId}": {
+      "schema": "CustomerRegistration",
+      "description": "Customer registrations, leads, and orders"
+    }
+  }
+}

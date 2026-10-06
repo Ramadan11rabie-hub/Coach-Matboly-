@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Barlow Condensed', 'Bebas Neue', 'Cairo', sans-serif;
+    --font-body: 'Montserrat', 'Tajawal', sans-serif;
+    --accent-yellow: #FFE600;
+  }
+
+  [dir="rtl"] {
+    font-family: 'Tajawal', 'Cairo', 'Montserrat', sans-serif;
+  }
+
+  [dir="rtl"] .font-heading {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    letter-spacing: 0em;
+  }
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+[dir="rtl"] .font-heading {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  letter-spacing: 0em;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', 'Cairo', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Custom scrollbar for dark fitness theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFE600;
+}
+
+/* Text glow & fitness button effects */
+.gym-glow-yellow {
+  box-shadow: 0 0 25px rgba(255, 230, 0, 0.25);
+}
+
+.gym-glow-yellow:hover {
+  box-shadow: 0 0 35px rgba(255, 230, 0, 0.45);
+}
+
+.text-stroke-yellow {
+  -webkit-text-stroke: 1px #FFE600;
+  color: transparent;
+}

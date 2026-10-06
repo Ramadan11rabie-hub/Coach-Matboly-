@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Customers registrations collection
+    match /customers/{customerId} {
+      allow read, write: if true;
+    }
+
+    // Site configuration collection
+    match /site_config/{configId} {
+      allow read, write: if true;
+    }
+  }
+}
